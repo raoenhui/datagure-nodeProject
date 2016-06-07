@@ -1,0 +1,19 @@
+{
+  "name": "datagure-node",
+  "version": "1.0.0",
+  "description": "node.js项目实战",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raoenhui/datagure-nodeProject.git"
+  },
+  "author": "iceRao <670615769@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raoenhui/datagure-nodeProject/issues"
+  },
+  "homepage": "https://github.com/raoenhui/datagure-nodeProject#readme"
+}
