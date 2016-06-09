@@ -23,6 +23,7 @@
     "babel-cli": "^6.9.0",
     "babel-preset-es2015-node4": "^2.1.0",
     "babel-preset-stage-0": "^6.5.0",
+    "mongoose": "^4.4.20",
     "project-core": "^0.1.3"
   }
 }
