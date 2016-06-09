@@ -6,12 +6,11 @@
  *@author iceRao <670615769@qq.com>
  */
 
-import mongoose from 'mongoose';
 module.exports = function (done) {
 
-  const conn = mongoose.createConnection($.config.get('db.mongodb'));
-  $.mongodb = conn;
-  $.model = {};
+  $.router.get('/', function(req,res,next){
+    res.end(`现在是北京时间${new Date()}`);
+  });
 
   done();
 
