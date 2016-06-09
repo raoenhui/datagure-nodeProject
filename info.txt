@@ -1,3 +1,5 @@
 babel src -d target -w
 
 export NODE_ENV=dev && node target/server.js
+
+npm run dev
