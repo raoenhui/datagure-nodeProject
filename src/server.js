@@ -53,5 +53,12 @@ $.init.load(path.resolve(__dirname,'routes'));
      console.log('inited [env=%s]', $.env);
    }
 
+    const item = new $.model.User({
+      name: `User${$.utils.date('YmdHms')}`,
+      password: '123456test',
+      nickname: '测试用户',
+    });
+    item.save(console.log);
+
 
  });
