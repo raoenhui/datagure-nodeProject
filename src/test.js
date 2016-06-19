@@ -15,9 +15,9 @@ $.method('user.add').call({
 },console.log);
 */
 
-$.method('user.get').call({
-  name: 'hello'
-},console.log);
+// $.method('user.get').call({
+//   name: 'hello'
+// },console.log);
 
 
 // $.method('user.update').call({
