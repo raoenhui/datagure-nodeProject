@@ -57,8 +57,8 @@ $.method('topic.list').register(async function (params) {
     updatedAt: 1,
     lastCommentedAt: 1,
   });
-  if (params.skip) ret.skip(params.skip);
-  if (params.limit) ret.skip(params.limit);
+  if (params.skip) ret.skip(Number(params.skip));
+  if (params.limit) ret.limit(Number(params.limit));
 
   return ret;
 
