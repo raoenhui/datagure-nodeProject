@@ -14,7 +14,7 @@ module.exports = function (done) {
     req.body.authorId = req.session.user._id;
 
     if('tags' in req.body) {
-      req.body.tags = req.body.tags.split(',').map(v => v.trim()).filter(v => v);
+      req.body.tags = req.body.tags.split(',').map(v => v.trim()).filter(v => v);//filter是为了过滤空值
     }
 
     const topic = await $.method('topic.add').call(req.body);
@@ -46,6 +46,29 @@ $.router.get('/api/topic/item/:topic_id', async function(req,res,next){
 
 });
 
+
+$.router.post('/api/topic/item/:topic_id', $.checkLogin, $.checkTopicAuthor,async function(req,res,next) {
+
+  if('tags' in req.body) {
+    req.body.tags = req.body.tags.split(',').map(v => v.trim()).filter(v => v);//filter是为了过滤空值
+  }
+
+  req.body._id = req.params.topic_id;
+  await $.method('topic.update').call(req.body);
+  const topic = await $.method('topic.get').call({_id:req.params.topic_id});
+
+  res.apiSuccess({topic});
+
+});
+
+
+$.router.delete('/api/topic/item/:topic_id', $.checkLogin, $.checkTopicAuthor,async function(req,res,next) {
+
+  const topic = await $.method('topic.delete').call({_id: req.params.topic_id});
+
+  res.apiSuccess({topic});
+
+});
 
   done();
 
