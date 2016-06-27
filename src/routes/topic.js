@@ -94,15 +94,13 @@ $.router.post('/api/topic/item/:topic_id/comment/delete', $.checkLogin,async fun
   const comment = await $.method('topic.comment.get').call(query);
 
   if(!(comment && comment.comments && comment.comments[0] &&
-     comment.comment[0].authorId.toString() === req.session.user._id.toString())) {
+     comment.comments[0].authorId.toString() === req.session.user._id.toString())) {
        return next(new Error('access denied'));
      }
 
      await $.method('topic.comment.delete').call(query);
 
      res.apiSuccess({comment: comment.comments[0]});
-
-  res.apiSuccess({comment});
 
 });
 

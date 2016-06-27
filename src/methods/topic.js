@@ -122,9 +122,9 @@ $.method('topic.list').register(async function (params) {
 
     return $.model.Topic.findOne({
       _id: params._id,
-      'comments.cid': params.cid
+      'comments._id': params.cid
     },{
-      comments: 1
+      'comments.$': 1
     });
 
   });
@@ -138,7 +138,9 @@ $.method('topic.list').register(async function (params) {
 
     return $.model.Topic.update({_id: params._id},{
       $pull: {
-        'comments.cid': params.cid
+        comments:{
+          _id: params.cid
+        }
       }
     });
 
