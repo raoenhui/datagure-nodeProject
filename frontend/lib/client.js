@@ -41,3 +41,15 @@ export function getTopicList(options) {
 export function getTopicDetail(id) {
   return request('get', `topic/item/${id}`).then(ret => ret.topic);
 }
+
+export function login(name,password) {
+  return request('post', `login`, {name, password});
+}
+
+export function loginUser(name,password) {
+  return request('get', `login_user`).then(ret => ret.user);
+}
+
+export function logout() {
+  return request('post', 'logout');
+}
