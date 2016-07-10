@@ -6,10 +6,12 @@
  *@author iceRao <670615769@qq.com>
  */
 
-module.exports = function (done) {
+import path from 'path';
 
-  $.router.get('/', function(req,res,next){
-    res.end(`现在是北京时间${new Date()}`);
+module.exports = function(done) {
+
+  $.router.get('/', function(req, res, next) {
+    res.sendFile(path.resolve(__dirname, '../../frontend/index.html'));
   });
 
   done();

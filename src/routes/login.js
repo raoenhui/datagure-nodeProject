@@ -9,7 +9,7 @@
 module.exports = function (done) {
 
 
-  $.router.get('/api/login_user', async function(req,res,next){  console.log(req);
+  $.router.get('/api/login_user', async function(req,res,next){
     res.apiSuccess({user: req.session.user, token: req.session.logout_token});
   });
 
