@@ -24,7 +24,3 @@ $.method('user.add').call({
 //   name: 'hello',
 //   nickname: '测试2',
 // },console.log);
-
-
-
-console.log('哈哈');
