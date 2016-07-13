@@ -4,3 +4,5 @@ export NODE_ENV=dev && node target/server.js
 
 npm run watch
 npm run dev
+
+npm run fe:dev
